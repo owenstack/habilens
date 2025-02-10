@@ -1,6 +1,16 @@
-import { ReactNode } from "react";
-import type { Metadata } from "next";
+"use client";
 
-export default function MarketingLayout({children}: {children: ReactNode}) {
-    return <>{children}</>
+import { usePathname } from "next/navigation";
+import { Navbar } from "@/components/marketing/header";
+import type { ReactNode } from "react";
+
+export default function MarketingLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
+  return (
+    <>
+      <Navbar className={pathname === "/" ? "hidden" : ""} />
+      {children}
+    </>
+  );
 }
