@@ -14,7 +14,7 @@ export function Navbar({ className }: { className?: string }) {
         className
       )}
     >
-      <nav className="items-center gap-2 md:flex">
+      <nav className="flex items-center gap-2">
         <Logo />
         <Link href={"/"} className={buttonVariants({ variant: "link" })}>
           Properties
